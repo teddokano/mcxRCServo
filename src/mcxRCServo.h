@@ -1,5 +1,5 @@
-#ifndef MCX_RCSERVO_H
-#define MCX_RCSERVO_H
+#ifndef MCXRCSERVO_H
+#define MCXRCSERVO_H
 
 #include  "Arduino.h"
 
@@ -17,9 +17,9 @@
  *  A derived class just needs to hand its own device parameters to this
  *  constructor. See PositionServo and RotationServo.
  *
- *  @class mcx_RCServo
+ *  @class mcxRCServo
  */
-class mcx_RCServo : public Obj
+class mcxRCServo : public Obj
 {
 public:
 	enum {
@@ -33,8 +33,8 @@ public:
 	 *  @param frequency_hz   PWM frequency [Hz]
 	 *  @param pwm_resolution analogWrite() resolution [bits]
 	 */
-	mcx_RCServo( int pwm_pin, double high_min_ms, double high_max_ms, double frequency_hz = 50.00, uint8_t pwm_resolution = 16 );
-	virtual ~mcx_RCServo();
+	mcxRCServo( int pwm_pin, double high_min_ms, double high_max_ms, double frequency_hz = 50.00, uint8_t pwm_resolution = 16 );
+	virtual ~mcxRCServo();
 
 	int		range( double left, double right );
 
@@ -63,4 +63,4 @@ protected:
 	const double	pwm_duty_range;
 };
 
-#endif // MCX_RCSERVO_H
+#endif // MCXRCSERVO_H

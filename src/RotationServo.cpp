@@ -1,7 +1,7 @@
 #include  "RotationServo.h"
 
 RotationServo::RotationServo( int pwm_pin, double high_min_ms, double high_max_ms, double frequency_hz, uint8_t pwm_resolution )
-	:	mcx_RCServo( pwm_pin, high_min_ms, high_max_ms, frequency_hz, pwm_resolution )
+	:	mcxRCServo( pwm_pin, high_min_ms, high_max_ms, frequency_hz, pwm_resolution )
 {
 	range( -1.00, 1.00 );
 }

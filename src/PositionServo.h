@@ -1,7 +1,7 @@
 #ifndef POSITIONSERVO_H
 #define POSITIONSERVO_H
 
-#include  "mcx_RCServo.h"
+#include  "mcxRCServo.h"
 
 /** Positional rotation type RC servo.
  *
@@ -18,7 +18,7 @@
  *
  *  @class PositionServo
  */
-class PositionServo : public mcx_RCServo
+class PositionServo : public mcxRCServo
 {
 public:
 	/** @param pwm_pin        pin the servo signal is output from
@@ -30,7 +30,7 @@ public:
 	PositionServo( int pwm_pin, double high_min_ms, double high_max_ms, double frequency_hz = 50.00, uint8_t pwm_resolution = 16 );
 
 	//  set the shaft angle, in the unit given to range()
-	using	mcx_RCServo::position;
+	using	mcxRCServo::position;
 };
 
 #endif // POSITIONSERVO_H

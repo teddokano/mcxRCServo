@@ -1,7 +1,7 @@
 #ifndef ROTATIONSERVO_H
 #define ROTATIONSERVO_H
 
-#include  "mcx_RCServo.h"
+#include  "mcxRCServo.h"
 
 /** Continuous rotation type RC servo, the counterpart of PositionServo.
  *
@@ -19,7 +19,7 @@
  *
  *  @class RotationServo
  */
-class RotationServo : public mcx_RCServo
+class RotationServo : public mcxRCServo
 {
 public:
 	/** @param pwm_pin        pin the servo signal is output from

@@ -1,6 +1,6 @@
-#include  "mcx_RCServo.h"
+#include  "mcxRCServo.h"
 
-mcx_RCServo::mcx_RCServo( int pwm_pin, double high_min_ms, double high_max_ms, double frequency_hz, uint8_t pwm_resolution )
+mcxRCServo::mcxRCServo( int pwm_pin, double high_min_ms, double high_max_ms, double frequency_hz, uint8_t pwm_resolution )
 	:	pin( pwm_pin ),
 		pwm_frequency_hz( frequency_hz ),
 		pwm_period_ms( (1.00 / frequency_hz) * 1000.00 ),
@@ -15,9 +15,9 @@ mcx_RCServo::mcx_RCServo( int pwm_pin, double high_min_ms, double high_max_ms, d
 	analogWriteResolution( resolution );
 }
 
-mcx_RCServo::~mcx_RCServo() {}
+mcxRCServo::~mcxRCServo() {}
 
-void mcx_RCServo::position( double p )
+void mcxRCServo::position( double p )
 {
 	p	= constrain( p, user_range_min, user_range_max );
 
@@ -26,7 +26,7 @@ void mcx_RCServo::position( double p )
 	analogWrite( pin, lround( pos * pwm_duty_range + pwm_duty_min ) );
 }
 
-int mcx_RCServo::range( double left, double right )
+int mcxRCServo::range( double left, double right )
 {
 	if ( left == right )
 		return RANGE_SETTING;

@@ -1,12 +1,12 @@
 #######################################
-# Syntax Coloring Map for mcx_RCServo
+# Syntax Coloring Map for mcxRCServo
 #######################################
 
 #######################################
 # Datatypes (KEYWORD1)
 #######################################
 
-mcx_RCServo	KEYWORD1
+mcxRCServo	KEYWORD1
 PositionServo	KEYWORD1
 RotationServo	KEYWORD1
 SG90	KEYWORD1

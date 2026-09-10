@@ -1,4 +1,4 @@
-# mcx_RCServo
+# mcxRCServo
 
 English | [日本語](README.ja.md)
 
@@ -59,7 +59,7 @@ one final value. `SG90_moves` does that with a small `glide()` helper.
 ## Class hierarchy
 
 ```
-mcx_RCServo          PWM output and the value-to-pulse-width mapping
+mcxRCServo          PWM output and the value-to-pulse-width mapping
  |
  +- PositionServo    the pulse width is a shaft angle: position()
  |   +- SG90         0.50-2.40ms, 50Hz
@@ -68,7 +68,7 @@ mcx_RCServo          PWM output and the value-to-pulse-width mapping
      +- FS90R        0.70-2.30ms, 50Hz
 ```
 
-`mcx_RCServo` knows nothing about what the value it is given means -- it only
+`mcxRCServo` knows nothing about what the value it is given means -- it only
 maps a user value range onto a pulse width range. The two classes below it
 give that value a meaning, and the product classes below *those* supply the
 pulse timing of one actual servo.
@@ -114,7 +114,7 @@ constructor.
 `library.properties` says `architectures=mcx`. That is not caution -- this
 library leans on two things a stock Arduino core does not have.
 
-**`mcx_RCServo` derives from `Obj`.** `Obj` is r01lib's common base for every
+**`mcxRCServo` derives from `Obj`.** `Obj` is r01lib's common base for every
 peripheral driver in mcx-arduino-core, and its one job is to run the chip's
 `init_mcu()` exactly once, on the first peripheral object anybody constructs.
 That is what this library needs, because a servo is normally a global object
@@ -134,7 +134,7 @@ cores do not.
 Porting to another core means replacing both: drop the `Obj` base and move
 the PWM setup out of the constructor into a `begin()` the sketch calls from
 `setup()`, then supply whatever that core offers for setting a PWM frequency.
-Everything above `mcx_RCServo` -- the per-servo pulse timing, the value range
+Everything above `mcxRCServo` -- the per-servo pulse timing, the value range
 mapping, the class hierarchy -- is plain arithmetic and would carry over
 untouched.
 
